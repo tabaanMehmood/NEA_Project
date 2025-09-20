@@ -1,15 +1,14 @@
-import { useState } from 'react'
-
-import './App.css'
+import WebsiteLogo from './assets/icon.png';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  )
+    <div>
+      <header>
+        <img src={WebsiteLogo} alt='logo'/>
+        <h1>StudySmarter</h1>
+        <h2>Your Ultimate Study Companion</h2>
+      </header>
+    </div>
+  );
 }
-
-export default App
+export default App;
