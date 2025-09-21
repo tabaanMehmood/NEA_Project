@@ -21,3 +21,18 @@
   align-items: center; 
   margin: 2rem 0; 
 }    
+
+.teacherStudent-tab-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background: #0A1931;;
+  border-radius: 8px;
+  margin: 0rem;
+  padding: 0.3rem 0.11rem;
+}   
+
+.tab-button.active {
+  background: #0a7cff;   /* 🎨 selected colour */
+  color: white;
+}

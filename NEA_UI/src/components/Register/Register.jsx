@@ -1,10 +1,13 @@
 import { useState } from "react";
 import TabButton from "../../components/TabButton/TabButton.jsx";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     console.log("Register component rendered");
     const [selectedTab, setSelectedTab] = useState(null);
+
+    const navigate = useNavigate();
 
     return (
         <section id="register">
@@ -13,7 +16,9 @@ export default function Register() {
                     <TabButton 
                         label="Sign In" 
                         isSelected={selectedTab === "signIn"}
-                        onClick={() => setSelectedTab("signIn")} 
+                        onClick={() => {
+                            setSelectedTab("signIn");
+                        }}
                     />
                     <TabButton 
                         label="Sign Up" 
@@ -27,7 +32,16 @@ export default function Register() {
                             <h2>Sign In</h2>
                             <input type="email" placeholder="Email" required />
                             <input type="password" placeholder="Password" required />
-                            <button type="submit">Sign In</button>
+                            <button 
+                                type="submit" 
+                                onClick={() => { navigate("/MainPage"); }} >
+                                Sign In
+                            </button>
+                            <div className="teacherStudent-tab-button-container">
+                                <TabButton label="Teacher" />
+                                <TabButton label="Student" />
+                            </div>
+
                         </form>
                     )}
 
@@ -37,9 +51,17 @@ export default function Register() {
                             <input type="text" placeholder="Username" required />
                             <input type="email" placeholder="Email" required />
                             <input type="password" placeholder="Password" required />
-                            <button type="submit">Sign Up</button>
+                            <button 
+                                type="submit" 
+                                onClick={() => { navigate("/MainPage"); }} >
+                                Sign Up
+                            </button>
+                            <div className="teacherStudent-tab-button-container">
+                                <TabButton label="Teacher" />
+                                <TabButton label="Student" />
+                            </div>
                         </form>
-                    )}
+                    )} 
                 </div> 
             </div>
         </section>

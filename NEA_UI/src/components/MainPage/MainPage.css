@@ -1,0 +1,37 @@
+.MainPage {
+  display: flex;         /*place sidebar + content side by side */
+  flex: 1;               /* take full width of parent */
+  gap: 1rem;            /* space between sidebar and content */
+  align-items: stretch;  /* make sidebar and content stretch to full height */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;             /* fixed width */
+  background-color: #0A1931;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* include padding in height */
+  
+}
+.content{
+    flex: 1;                  /* take remaining space */
+    padding: 2rem;
+    background-color: #0A1931;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.content p {
+    text-align: center;
+}
