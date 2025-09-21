@@ -1,8 +1,9 @@
 import { useState } from "react";
-import TabButton from "./components/TabButton/TabButton.jsx";
+import TabButton from "../../components/TabButton/TabButton.jsx";
 import "./Register.css";
 
 export default function Register() {
+    console.log("Register component rendered");
     const [selectedTab, setSelectedTab] = useState(null);
 
     return (

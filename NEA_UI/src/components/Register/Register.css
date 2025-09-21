@@ -1,24 +1,16 @@
-.tab-button {
-  padding: 0.5rem 1.5rem;
-  background: #4488ff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin: 0.5rem;
-}
-.tab-button:hover {
-  background: #0047cb;
-}
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
 .register-container {
+  font-family: 'Quicksand', sans-serif;
+}
+.register-container {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
   align-items: center;   /* horizontal center */
   justify-content: center; /* vertical center */
-  min-height: 80vh;      /* take most of the viewport height */
+  min-height: 30vh;      /* take most of the viewport height */
 }
 
 .tab-button-container {
@@ -27,6 +19,8 @@
   gap: 1rem; 
   align-items: center; 
   margin: 2rem 0; 
+  border-radius: 8px;
+  background: #0A1931;
 }    
 
 .tab-content {
@@ -40,10 +34,29 @@ form {
   flex-direction: column;
   gap: 0.5rem;
   width: 300px;
+  background: #0A1931;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
 input {
   padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 0.3rem;
+  width: 100%;
+  background: #005694;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0.5rem auto 0 auto;
+  display: block;
 }
