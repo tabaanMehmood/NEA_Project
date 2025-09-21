@@ -136,6 +136,72 @@ export default function SubjectToBoard({ qualification }) {
           </div>
           </>
         )}
+        {selectedSubject ===  "Physics" && (
+        <>
+        <h1>Select Exam Board</h1>
+          <div className="exam-board-options">
+            <TabButton
+              label="OCR"
+              isSelected={selectedBoard === "OCR"}
+              onClick={() => setSelectedBoard("OCR")}
+            />
+            <TabButton
+              label="Edexcel"
+              isSelected={selectedBoard === "Edexcel"}
+              onClick={() => setSelectedBoard("Edexcel")}
+            />
+            <TabButton
+              label="AQA"
+              isSelected={selectedBoard === "AQA"}
+              onClick={() => setSelectedBoard("AQA")}
+            />
+          </div>
+          </>
+        )}
+        {selectedSubject ===  "Biology" && (
+        <>
+        <h1>Select Exam Board</h1>
+          <div className="exam-board-options">
+            <TabButton
+              label="Edexcel"
+              isSelected={selectedBoard === "Edexcel"}
+              onClick={() => setSelectedBoard("Edexcel")}
+            />
+            <TabButton
+              label="AQA"
+              isSelected={selectedBoard === "AQA"}
+              onClick={() => setSelectedBoard("AQA")}
+            />
+            <TabButton
+              label="OCR"
+              isSelected={selectedBoard === "OCR"}
+              onClick={() => setSelectedBoard("OCR")}
+            />
+          </div>
+          </>
+        )}
+        {selectedSubject ===  "Art" && (
+        <>
+        <h1>Select Exam Board</h1>
+          <div className="exam-board-options">
+            <TabButton
+              label="AQA"
+              isSelected={selectedBoard === "AQA"}
+              onClick={() => setSelectedBoard("AQA")}
+            />
+            <TabButton
+              label="Edexcel"
+              isSelected={selectedBoard === "Edexcel"}
+              onClick={() => setSelectedBoard("Edexcel")}
+            />
+            <TabButton
+              label="OCR"
+              isSelected={selectedBoard === "OCR"}
+              onClick={() => setSelectedBoard("OCR")}
+            />
+          </div>
+          </>
+        )}
 
       </div>
     </div>
