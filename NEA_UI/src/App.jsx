@@ -1,16 +1,13 @@
 import Header from "./components/Header/Header";
-import TabButton from "./components/TabButton/TabButton.jsx";
+import Register from "./components/Register/Register";
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState(null); // no default tab selected
 
   return (
     <div>
       <Header />
-      <menu>
-        <div className="tab-button-container">
-        <TabButton label="Sign In" onClick={() => {}} />
-        </div> 
-      </menu>
+      <Register/>
     </div>
   );
 }

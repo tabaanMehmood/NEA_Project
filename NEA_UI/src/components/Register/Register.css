@@ -1,0 +1,49 @@
+.tab-button {
+  padding: 0.5rem 1.5rem;
+  background: #4488ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0.5rem;
+}
+.tab-button:hover {
+  background: #0047cb;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* horizontal center */
+  justify-content: center; /* vertical center */
+  min-height: 80vh;      /* take most of the viewport height */
+}
+
+.tab-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; 
+  align-items: center; 
+  margin: 2rem 0; 
+}    
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 300px;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

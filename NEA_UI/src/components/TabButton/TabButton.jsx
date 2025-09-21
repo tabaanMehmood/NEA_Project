@@ -1,9 +1,12 @@
 import './TabButton.css';
 
-export default function TabButton({ label, onClick }) {
+export default function TabButton({ label, onClick, isSelected }) {
   return (
-    <button onClick={onClick} className="tab-button">
-      {label}
-    </button>
+      <button 
+        className={`tab-button ${isSelected ? "active" : ""}`}
+        onClick={onClick} 
+      >
+        {label}
+      </button>
   );
 }
