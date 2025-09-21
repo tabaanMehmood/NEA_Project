@@ -36,3 +36,11 @@
   background: #0a7cff;   /* 🎨 selected colour */
   color: white;
 }
+
+.exam-board-options {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

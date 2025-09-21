@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TabButton from "../TabButton/TabButton";
+import SubjectToBoard from "./SubjectToBoard/SubjectToBoard";
 import "./GetStarted.css";
 
 export default function GetStarted() {
@@ -13,29 +14,16 @@ export default function GetStarted() {
         <TabButton 
           label="GCSE"
           isSelected={selectedTab === "GCSE"}
-          onClick={() => {setSelectedTab("GCSE")}}
+          onClick={() => setSelectedTab("GCSE")}
         />
         <TabButton 
           label="A Level"
           isSelected={selectedTab === "A Level"}
-          onClick={() => {setSelectedTab("A Level")}}
+          onClick={() => setSelectedTab("A Level")}
         />
         
-          {selectedTab === "GCSE" && (
-            <div className="subject-options">
-              <TabButton label="Maths" />
-              <TabButton label="Biology" />
-              <TabButton label="Computer Science" />
-            </div>
-          )}
-
-          {selectedTab === "A Level" && (
-            <div className="subject-options">
-              <TabButton label="Computer Science" />
-              <TabButton label="Economics" />
-              <TabButton label="Maths" />
-            </div>
-          )}
+        {/* Pass selectedTab as qualification prop */}
+        {selectedTab && <SubjectToBoard qualification={selectedTab} />}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import MainPage from "./components/MainPage/MainPage";
 import UserStartUp from "./components/GetStarted/GetStarted";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GetStarted from "./components/GetStarted/GetStarted";
+import SubjectToBoard from "./components/GetStarted/SubjectToBoard/SubjectToBoard";
 
 function App() {
   return (
