@@ -1,13 +1,16 @@
-import WebsiteLogo from './assets/icon.png';
+import Header from "./components/Header/Header";
+import TabButton from "./components/TabButton/TabButton.jsx";
 
 function App() {
+
   return (
     <div>
-      <header>
-        <img src={WebsiteLogo} alt='logo'/>
-        <h1>StudySmarter</h1>
-        <h2>Your Ultimate Study Companion</h2>
-      </header>
+      <Header />
+      <menu>
+        <div className="tab-button-container">
+        <TabButton label="Sign In" onClick={() => {}} />
+        </div> 
+      </menu>
     </div>
   );
 }
