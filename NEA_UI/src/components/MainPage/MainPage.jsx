@@ -12,8 +12,10 @@ export default function MainPage() {
           <TabButton label="Get Started" 
           onClick={() => { navigate("/GetStarted"); }}
           />
-          <TabButton label="+ Classroom" />
-          <TabButton label="+ Studyroom" />
+          <TabButton label="+Classroom" 
+          onClick={() => { navigate("/Classroom"); }}
+          />
+          <TabButton label="+Studyroom" />
           <TabButton label="Economics" />
           <TabButton label="Maths" />
           <TabButton label="Computer Science" />
