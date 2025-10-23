@@ -1,8 +1,17 @@
 import TabButton from "../TabButton/TabButton.jsx";
 import "../MainPage/MainPage.css";
+import { useNavigate } from "react-router-dom";
+import HomeLogo from '../../assets/ReturnHome.png';
 
 export default function Classroom() {
+  const navigate = useNavigate();
   return (
+    <>
+    <div className="HeaderLogo">
+      <img src= {HomeLogo} alt='Home'
+      onClick ={() => { navigate("/MainPage"); }}
+      />
+    </div>
     <div className="MainPage"> 
       <aside className ="sidebar">
         <h2>Students</h2>
@@ -23,5 +32,6 @@ export default function Classroom() {
         <p>This is where classroom content will be displayed</p>
       </div>
     </div>
+    </>
   );
 }

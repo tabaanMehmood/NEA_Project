@@ -33,7 +33,7 @@
 }   
 
 .tab-button.active {
-  background: #0a7cff;   /* 🎨 selected colour */
+  background: #0a7cff;   /* selected colour */
   color: white;
 }
 
