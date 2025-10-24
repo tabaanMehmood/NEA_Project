@@ -11,16 +11,15 @@ import HeadingHome from "./components/Header/HeadingHome";
 function App() {
   const location = useLocation();
   return (
-    <BrowserRouter>
+    <> 
     {location.pathname === "/Classroom" ? <HeadingHome /> : <Header />}
       <Routes>
         <Route path="/" element={<Register />} />       
         <Route path="/MainPage" element={<MainPage />} /> 
         <Route path="/GetStarted" element={<GetStarted/>} />
         <Route path="/Classroom" element={<Classroom/>} />
-
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
