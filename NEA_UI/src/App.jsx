@@ -7,17 +7,19 @@ import GetStarted from "./components/GetStarted/GetStarted";
 import SubjectToBoard from "./components/GetStarted/SubjectToBoard/SubjectToBoard";
 import Classroom from "./components/Classroom/Classroom";
 import HeadingHome from "./components/Header/HeadingHome";
+import Studyroom from "./components/Studyroom/Studyroom";
 
 function App() {
   const location = useLocation();
   return (
     <> 
-    {location.pathname === "/Classroom" ? <HeadingHome /> : <Header />}
+    {location.pathname === "/MainPage" || location.pathname === "/" ? <Header /> : <HeadingHome />}
       <Routes>
         <Route path="/" element={<Register />} />       
         <Route path="/MainPage" element={<MainPage />} /> 
         <Route path="/GetStarted" element={<GetStarted/>} />
         <Route path="/Classroom" element={<Classroom/>} />
+        <Route path="/Studyroom" element={<Studyroom/>} />
       </Routes>
     </>
   );

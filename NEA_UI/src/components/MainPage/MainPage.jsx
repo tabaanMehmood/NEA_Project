@@ -15,7 +15,9 @@ export default function MainPage() {
           <TabButton label="+Classroom" 
           onClick={() => { navigate("/Classroom"); }}
           />
-          <TabButton label="+Studyroom" />
+          <TabButton label="+Studyroom" 
+          onClick={() => { navigate("/Studyroom"); }}
+          />
           <TabButton label="Economics" />
           <TabButton label="Maths" />
           <TabButton label="Computer Science" />
