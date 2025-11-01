@@ -1,8 +1,6 @@
 import TabButton from "../TabButton/TabButton.jsx";
 import "../MainPage/MainPage.css";
 import { useNavigate } from "react-router-dom";
-import HomeLogo from '../../assets/ReturnHome.png';
-import HeadingHome from "../Header/HeadingHome.jsx";
 
 export default function Studyroom() {
   const navigate = useNavigate();
