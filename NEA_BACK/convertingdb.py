@@ -9,4 +9,5 @@ conn = sqlite3.connect("my_database.db")
 table_name = "my_table"
 df.to_sql(table_name, conn, if_exists="replace", index=False)
 
+print(df)
 conn.close()

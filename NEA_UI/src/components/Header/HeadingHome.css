@@ -24,8 +24,8 @@ header h1 {
 .HeadingHome .HomeLogo {
   position: absolute;
   left: 1rem;
-  width: 10rem;
-  height: 10rem;
+  width: 5rem;
+  height: 5rem;
   cursor: pointer;
 }
 

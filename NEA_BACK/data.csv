@@ -1,9 +1,9 @@
-username,password,role,qualificationLevel,subject,subjectID,examBoard,classroomID,classroomCode,studyroomID,studyroomCode
-teacher1,teach1pass,Teacher,A-Level,Computer Science,1,OCR,1,GT3S0,,
-student1,student1pass,Student,A-Level,Computer Science,1,OCR,1,GT3S0,1,AW9D2
-teacher2,teach2pass,Teacher,A-Level,Mathematics,2,Edexcel,2,FW9V8,,
-student2,student2pass,Student,A-Level,Mathematics,2,Edexcel,2,FW9V8,1,BR2G9
-teacher3,teach3pass,Teacher,A-Level,Economics,3,Edexcel,3,CW3Y2,,
-student3,student3pass,Student,A-Level,Economics,3,Edexcel,3,CW3Y2,2,VW0V3
-teacher4,teach4pass,Teacher,A-Level,Physics,4,AQA,4,AQ7N7,,
-student4,student4pass,Student,A-Level,Physics,4,AQA,4,AQ7N7,2,DK8V5
+username,email,password,role,qualificationLevel,subject,subjectID,examBoard,classroomID,classroomCode,studyroomID,studyroomCode
+teacher1,teacher1@email.com,teach1pass,Teacher,A-Level,Computer Science,1,OCR,1,GT3S0,,
+student1,student1@email.com,student1pass,Student,A-Level,Computer Science,1,OCR,1,GT3S0,1,AW9D2
+teacher2,teacher2@email.com,teach2pass,Teacher,A-Level,Mathematics,2,Edexcel,2,FW9V8,,
+student2,student2@email.com,student2pass,Student,A-Level,Mathematics,2,Edexcel,2,FW9V8,1,BR2G9
+teacher3,teacher3@email.com,teach3pass,Teacher,A-Level,Economics,3,Edexcel,3,CW3Y2,,
+student3,student3@email.com,student3pass,Student,A-Level,Economics,3,Edexcel,3,CW3Y2,2,VW0V3
+teacher4,teacher4@email.com,teach4pass,Teacher,A-Level,Physics,4,AQA,4,AQ7N7,,
+student4,student4@email.com,student4pass,Student,A-Level,Physics,4,AQA,4,AQ7N7,2,DK8V5
