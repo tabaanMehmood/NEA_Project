@@ -3,7 +3,7 @@ import TabButton from "../../components/TabButton/TabButton.jsx";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "http://localhost:5001/api";
 
 export default function Register() {
     console.log("Register component rendered");

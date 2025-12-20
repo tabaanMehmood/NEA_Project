@@ -1,4 +1,4 @@
-username,email,password,role,qualificationLevel,subject,subjectID,examBoard,classroomID,classroomCode,studyroomID,studyroomCode
+username,email,password,user_type,qualificationLevel,subject,subjectID,examBoard,classroomID,classroomCode,studyroomID,studyroomCode
 teacher1,teacher1@email.com,teach1pass,Teacher,A-Level,Computer Science,1,OCR,1,GT3S0,,
 student1,student1@email.com,student1pass,Student,A-Level,Computer Science,1,OCR,1,GT3S0,1,AW9D2
 teacher2,teacher2@email.com,teach2pass,Teacher,A-Level,Mathematics,2,Edexcel,2,FW9V8,,

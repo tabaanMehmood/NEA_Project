@@ -4,9 +4,10 @@ import sqlite3
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+from seed_data import seed_database
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)  # Enable CORS for http://localhost:5173
 
 # Database path
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'my_database.db')
@@ -23,13 +24,13 @@ def init_db():
             username TEXT NOT NULL UNIQUE,
             email TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
-            role TEXT,
+            user_type TEXT,
             qualificationLevel TEXT,
             subject TEXT,
             subjectID TEXT,
             examBoard TEXT,
             classroomID TEXT,
-            classroomCode TEXT,
+            classroomCode TEXT, 
             studyroomID TEXT,
             studyroomCode TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -77,7 +78,7 @@ def register():
         email = data['email'].strip()
         password = data['password']
         
-        role = data.get('role')  
+        user_type = data.get('user_type')  
         qualificationLevel = data.get('qualificationLevel')
         subject = data.get('subject')
         subjectID = data.get('subjectID')
@@ -90,7 +91,7 @@ def register():
         if '@' not in email:
             return jsonify({'error': 'Invalid email format'}), 400
         
-        password_hash = generate_password_hash(password)
+        password_hash = generate_password_hash(password, method="pbkdf2:sha256")
         
         # Connect to database
         conn = sqlite3.connect(DB_PATH)
@@ -106,13 +107,13 @@ def register():
         # Insert new user with all fields
         cursor.execute('''
             INSERT INTO users (
-                username, email, password, role, qualificationLevel, 
+                username, email, password, user_type, qualificationLevel, 
                 subject, subjectID, examBoard, classroomID, classroomCode, 
                 studyroomID, studyroomCode
             )
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
-            username, email, password_hash, role, qualificationLevel,
+            username, email, password_hash, user_type, qualificationLevel,
             subject, subjectID, examBoard, classroomID, classroomCode,
             studyroomID, studyroomCode
         ))
@@ -125,7 +126,7 @@ def register():
             'message': 'User registered successfully',
             'user_id': user_id,
             'username': username,
-            'role': role
+            'user_type': user_type
         }), 201
         
     except sqlite3.Error as e:
@@ -151,7 +152,7 @@ def login():
         
         # Find user by email - get all user fields
         cursor.execute('''
-            SELECT id, username, email, password, role, qualificationLevel, 
+            SELECT id, username, email, password, user_type, qualificationLevel, 
                    subject, subjectID, examBoard, classroomID, classroomCode, 
                    studyroomID, studyroomCode 
             FROM users WHERE email = ?
@@ -162,7 +163,7 @@ def login():
         if not user:
             return jsonify({'error': 'Invalid email or password'}), 401
         
-        (user_id, username, user_email, password_hash, role, qualificationLevel,
+        (user_id, username, user_email, password_hash, user_type, qualificationLevel,
          subject, subjectID, examBoard, classroomID, classroomCode,
          studyroomID, studyroomCode) = user
         
@@ -175,7 +176,7 @@ def login():
             'user_id': user_id,
             'username': username,
             'email': user_email,
-            'role': role,
+            'user_type': user_type,
             'qualificationLevel': qualificationLevel,
             'subject': subject,
             'subjectID': subjectID,
@@ -184,8 +185,6 @@ def login():
             'classroomCode': classroomCode,
             'studyroomID': studyroomID,
             'studyroomCode': studyroomCode,
-            # Backward compatibility
-            'user_type': role
         }), 200
         
     except sqlite3.Error as e:
@@ -201,7 +200,8 @@ def health():
 if __name__ == '__main__':
     # Initialize database on startup
     init_db()
-    print(f"Starting Flask server on http://localhost:5000")
     print(f"Database path: {DB_PATH}")
-    app.run(debug=True, port=5000)
+    seed_database()
+    app.run(host="localhost", port=5001, debug=True)
+
 

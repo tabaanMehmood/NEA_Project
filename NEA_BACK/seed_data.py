@@ -26,7 +26,7 @@ def seed_database():
             username TEXT NOT NULL UNIQUE,
             email TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
-            role TEXT,
+            user_type TEXT,
             qualificationLevel TEXT,
             subject TEXT,
             subjectID TEXT,
@@ -43,7 +43,7 @@ def seed_database():
     skipped_count = 0
     
     for user_data in seed_data:
-        username, email, password, role, qualificationLevel, subject, subjectID, examBoard, classroomID, classroomCode, studyroomID, studyroomCode = user_data
+        username, email, password, user_type, qualificationLevel, subject, subjectID, examBoard, classroomID, classroomCode, studyroomID, studyroomCode = user_data
         
         # Check if user already exists
         cursor.execute('SELECT id FROM users WHERE username = ? OR email = ?', (username, email))
@@ -55,23 +55,23 @@ def seed_database():
             continue
         
         # Hash the password
-        password_hash = generate_password_hash(password)
+        password_hash = generate_password_hash(password, method="pbkdf2:sha256")
         
         # Insert user
         try:
             cursor.execute('''
                 INSERT INTO users (
-                    username, email, password, role, qualificationLevel,
+                    username, email, password, user_type, qualificationLevel,
                     subject, subjectID, examBoard, classroomID, classroomCode,
                     studyroomID, studyroomCode
                 )
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
-                username, email, password_hash, role, qualificationLevel,
+                username, email, password_hash, user_type, qualificationLevel,
                 subject, subjectID, examBoard, classroomID, classroomCode,
                 studyroomID, studyroomCode
             ))
-            print(f"Added {username} ({role}) - {subject}")
+            print(f"Added {username} ({user_type}) - {subject}")
             inserted_count += 1
         except sqlite3.IntegrityError as e:
             print(f"Error inserting {username}: {e}")
