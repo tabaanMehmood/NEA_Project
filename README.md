@@ -82,7 +82,7 @@ Upon clicking the 'Get Started' button on the main page, the use is taken to thi
 <img width="1710" height="989" alt="Screenshot 2025-10-26 at 22 06 53" src="https://github.com/user-attachments/assets/9a285579-19fb-4de6-8dc8-4601cb677aa0" />
 Upon clicking the 'Classroom' button, the user is taken to this page. It includes all of the students in the classroom, and in further development will also include a class calendar and subject tips that the teacher can edit and adapt accordingly.
 <img width="1710" height="991" alt="Screenshot 2025-10-26 at 22 07 17" src="https://github.com/user-attachments/assets/dace81e4-30d8-4aba-b4b1-8297795888e0" />
-Uppon clicking the 'Studyroom' button, the user is taken to this page. It includes all of the people in the shared studyroom, and in further development will contain a shared calendar presenting the members' schedule, aiding group study
+Upon clicking the 'Studyroom' button, the user is taken to this page. It includes all of the people in the shared studyroom, and in further development will contain a shared calendar presenting the members' schedule, aiding group study
 
 
 
